@@ -129,7 +129,7 @@ class _TransactionPageState extends State<TransactionPage> {
                         .toList();
 
                     if (categories.isEmpty) {
-                      return Text('Không có mục lục ${_selectedType}');
+                      return Text('Không có mục lục $_selectedType');
                     }
 
                     return DropdownButtonFormField<String>(

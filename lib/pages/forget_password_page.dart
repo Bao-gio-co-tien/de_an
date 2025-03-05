@@ -6,7 +6,7 @@ import '../validation/validation.dart';
 
 
 class ForgetPasswordPage extends StatefulWidget {
-  const ForgetPasswordPage({Key? key}) : super(key: key);
+  const ForgetPasswordPage({super.key});
 
   @override
   _ForgetPasswordPageState createState() => _ForgetPasswordPageState();

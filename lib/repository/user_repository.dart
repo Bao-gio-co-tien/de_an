@@ -60,7 +60,7 @@ class UserRepository extends GetxController {
         backgroundColor: Colors.red.withOpacity(0.1),
         colorText: Colors.red,
       );
-      throw e;
+      rethrow;
     } catch (e) {
       Get.snackbar(
         "Lỗi",
@@ -69,7 +69,7 @@ class UserRepository extends GetxController {
         backgroundColor: Colors.red.withOpacity(0.1),
         colorText: Colors.red,
       );
-      throw e;
+      rethrow;
     }
   }
 

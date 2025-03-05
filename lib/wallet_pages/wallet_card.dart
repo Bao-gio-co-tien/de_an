@@ -10,7 +10,7 @@ class WalletCard extends StatelessWidget {
   final String title;
   final bool showLinkButton;
 
-  WalletCard({required this.walletType, required this.title, required this.showLinkButton});
+  const WalletCard({super.key, required this.walletType, required this.title, required this.showLinkButton});
 
   @override
   Widget build(BuildContext context) {

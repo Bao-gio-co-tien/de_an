@@ -6,6 +6,8 @@ class LinkBankAccountDialog extends StatelessWidget {
   final TextEditingController bankNameController = TextEditingController();
   final TextEditingController accountNumberController = TextEditingController();
 
+  LinkBankAccountDialog({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
