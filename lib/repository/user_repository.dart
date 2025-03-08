@@ -76,13 +76,13 @@ class UserRepository extends GetxController {
   Future<UserModel> getUserDetails(String uid) async {
     final doc = await _db.collection("Users").doc(uid).get();
     if (!doc.exists) {
-      throw Exception("User not found");
+      throw Exception("Không tìm thấy tài khoản");
     }
     return UserModel.fromJson(doc.data()!);
   }
 
   Future<void> updateUser(UserModel user) async {
-    if (user.uid == null) throw Exception("User ID is required");
+    if (user.uid == null) throw Exception("Cần nhập Id của người dùng");
 
     final updates = {
       'fullName': user.fullName,
@@ -95,7 +95,7 @@ class UserRepository extends GetxController {
 
   Future<void> deleteUser() async {
     final user = _auth.currentUser;
-    if (user == null) throw Exception("No user logged in");
+    if (user == null) throw Exception("Không có người dùng đăng nhập vào");
 
     await _db.collection("Users").doc(user.uid).delete();
 

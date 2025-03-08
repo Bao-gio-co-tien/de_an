@@ -16,7 +16,6 @@ class Validator {
     if (!emailRegExp.hasMatch(value)) {
       return 'Email không hợp lệ';
     }
-
     return null;
   }
 
@@ -54,7 +53,6 @@ class Validator {
     if (!phoneRegExp.hasMatch(value)) {
       return 'Số điện thoại không hợp lệ';
     }
-
     return null;
   }
 
