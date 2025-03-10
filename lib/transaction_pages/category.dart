@@ -32,7 +32,6 @@ class Category {
   }
 
   IconData getIcon() {
-    // Map of icon names to IconData
     final iconMap = {
       // Income icons
       'salary': Icons.work,
@@ -66,7 +65,6 @@ class Category {
       'books': Icons.book,
       'hobbies': Icons.palette,
 
-      // Default icon
       'default': Icons.help_outline,
     };
 

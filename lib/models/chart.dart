@@ -40,7 +40,7 @@ class _MyChartState extends State<MyChart> {
           groupKey = (now.difference(transaction.date).inDays / 7).floor();
           break;
         case 2:
-          groupKey = (now.year - transaction.date.year) * 12 +
+          groupKey = (now.year - transaction.date.year) * 6 +
               (now.month - transaction.date.month);
           break;
         default:
@@ -58,7 +58,7 @@ class _MyChartState extends State<MyChart> {
       }
     }
 
-    return List.generate(8, (i) {
+    return List.generate(7, (i) {
       double expenseAmount = groupedExpenses[i] ?? 0;
       double incomeAmount = groupedIncomes[i] ?? 0;
       return BarChartGroupData(
@@ -115,7 +115,7 @@ class _MyChartState extends State<MyChart> {
         );
         break;
       case 2:
-        label = DateFormat('MM').format(
+        label = DateFormat('MM/YY').format(
             now.subtract(Duration(days: (value.toInt() * 30)))
         );
         break;

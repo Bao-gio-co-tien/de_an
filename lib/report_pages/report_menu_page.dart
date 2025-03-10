@@ -14,7 +14,7 @@ class ReportPage extends StatefulWidget {
 
 class _ReportPageState extends State<ReportPage> {
   final CategoriesService _categoriesService = CategoriesService();
-  int _viewIndex = 1; // 0: Daily, 1: Weekly, 2: Monthly
+  int _viewIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class _ReportPageState extends State<ReportPage> {
   }
 
   Widget _buildViewButton(int index, String label, IconData icon) {
-    return ElevatedButton(
+    return Flexible(child: ElevatedButton(
       onPressed: () => setState(() => _viewIndex = index),
       style: ElevatedButton.styleFrom(
         backgroundColor: _viewIndex == index
@@ -80,7 +80,7 @@ class _ReportPageState extends State<ReportPage> {
       ),
       child: Row(
         children: [
-          Icon(icon, color: _viewIndex == index ? AppTheme.textColor : Colors.black),
+          Icon(icon, size: 15 ,color: _viewIndex == index ? AppTheme.textColor : Colors.black),
           const SizedBox(width: 5),
           Text(label,
               style: TextStyle(
@@ -89,6 +89,7 @@ class _ReportPageState extends State<ReportPage> {
           ),
         ],
       ),
+    )
     );
   }
 }
